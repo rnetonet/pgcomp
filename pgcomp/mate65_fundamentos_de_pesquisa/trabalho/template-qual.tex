@@ -76,7 +76,8 @@
 % Orientador(a)
 % Opcao: [f] - para orientador do sexo feminino
 % e.g. \adviser[f]{Profa. Dra. Maria Santos}
-\adviser{Ricardo Araújo Rios}
+%\adviser{Ricardo Araújo Rios}
+\adviser{***}
 
 % Orientador(a)
 % Opcao: [f] - para orientador do sexo feminino
@@ -192,33 +193,57 @@ Os algoritmos de aprendizagem de máquina baseados em fluxos de dados contínuos
 devido a natureza dinâmica das FCDs.
 Esses algoritmos devem se adaptar às constantes mudanças de distribuição dos dados, para não se tornarem imprecisos ou obsoletos.
 
-Portanto, a atividade de Detecção de Novidades (DN) - \textit{Concept Drift} - é essencial para o bom funcionamento dessas técnicas. A atividade de DN permite identificar o surgimento de novos conceitos e mudanças em conceitos existentes, permitindo a atualização do modelo de decisão. Novas técnicas de aprendizado ativo têm sido exploradas com o objetivo de aprimorar o processo de classificação e identificação de mudanças de conceito. 
+Portanto, a atividade de Detecção de Novidades (DN) - \textit{Concept Drift} - é essencial para o bom funcionamento dessas técnicas. A atividade de DN permite identificar o surgimento de novos conceitos e mudanças em conceitos existentes, possibilitando a atualização do modelo de decisão. Novas técnicas de aprendizado ativo têm sido exploradas com o objetivo de aprimorar o processo de classificação e identificação de mudanças de conceito. 
 
-% Dessa forma, a tarefa de Detecção de Novidade (DN) é imprescindível neste pro-
-% cesso, pois é ela que identiĄca o surgimento de novos conceitos e a mudança nos conceitos
-% existentes, que posteriormente irão atualizar o modelo de decisão. Visando melhorar o
-% processo de classiĄcação e DN em FCDs, estão sendo exploradas técnicas de aprendizado
-% ativo que auxiliam no processo de escolha das instâncias a serem rotuladas para atualizar
-% o modelo de decisão.
+\subsection{Fluxos Contínuos de Dados}
 
-% Este capítulo descreve as diferentes situações que estão presentes em FCDs. A
-% seção 2.2 apresenta os FCDs, exemplos de aplicações do mundo real que geram dados
-% em Ćuxo e quais os desaĄos encontrados para manipular grandes quantidades de dados.
-% A seção 2.3 traz o conceito de classiĄcação em FCDs e como os algoritmos da literatura
-% foram desenvolvidos para esta Ąnalidade. A seção 2.4 detalha em qual etapa do processo
-% de classiĄcação a DN é aplicada e como é realizada a atualização do modelo de decisão.
-% A seção 2.5 relata como são implementadas as técnicas de aprendizado e seus desaĄos.
-% A seção 2.6 faz uma breve descrição de algoritmos presentes na literatura que foram
-% desenvolvidos para classiĄcar dados e detectar novidades em FCDS.
+Fluxos Contínuos de Dados (FCDs) podem ser definidos como sequências contínuas de dados, de tamanho ilimitado, sem ordem definida e de alta frequência \cite{Babcock:2002:MID:543613.543615}. Novos algoritmos têm sido desenvolvidos para trabalhar com fluxos desse tipo, por exemplo: CLAM \cite{malkhateeb} e OLINDDA \cite{Spinosa:2009:NDA:1551768.1551770}. O desenvolvimento de algoritmos de aprendizado para esses cenários é uma tarefa custosa, pois devem lidar com sequências de dados geradas de forma contínua, em alta velocidade e cuja distribuição pode sofrer alterações ao longo do tempo \cite{Gama:2014:survey}.
 
+Os avanços recentes em hardware e software permitiram a aquisição de dados em maior escala, o que caracteriza ambientes dinâmicos, enquanto bases de dados tradicionais supõem cenários estacionários. O contínuo avanço das tecnologias, surgiram diversas aplicações do mundo real baseadas em fluxos contínuos de dados: 
 
-%Livro \cite{demeyer2008} e  livro \cite{raymond1999}.
+\begin{itemize}
+    \item \textbf{Sistemas de Segurança}: monitoramento contínuo através de imagens ou outros sensores para identificação de intrusos;
 
-%\xchapter{Exemplos}{} %sem preambulo
+    \item \textbf{Redes de Computadores}: análise do tráfego de rede, monitorando pacotes distoantes, além de realizar a detecção de invasores;
 
-%A numera\c{c}\~{a}o de figuras \'{e} sequencial, dentro do cap\'{\i}tulo. Ver Figura \ref{default-regular1} e Figura %\ref{default-regular2}.
+    \item \textbf{Mercado Financeiro}: análise de dados e estatísticas da bolsa de valores, produzindo informações importantes para investidores. Outra vertente é a aplicação na detecção de fraudes;
 
-%A numera\c{c}\~{a}o de tabelaas \'{e} sequencial, dentro do cap\'{\i}tulo. Ver Tabela \ref{default-table1} e Tabela %\ref{default-table2}.
+    \item \textbf{Medicina}: aprimoramento do modelo de detecção de determinada doença a partir das análises e resultados de novos casos.
+\end{itemize}
+
+Conforme \cite{Gama:2014:survey}, as principais características dos fluxos contínuos de dados são:
+
+\begin{itemize}
+    \item \textbf{Contínuos}: Elementos que compõem os dados são recebidos de forma continuada;
+
+    \item \textbf{Não estacionário}: Distribuição de probabilidade sofre alterações o longo do tempo;
+
+    \item \textbf{Potencialmente Infinitos}: Os fluxos são potencionalmente infinitos, o que impede o completo armazenamento em memória.
+\end{itemize}
+
+Essas propriedades inviabilizam a aplicação dos algoritmos tradicionais de mineração de dados (MD) e aprendizagem de máquina, a fluxos de dados contínuos.
+
+Mudança de conceito (\textit{concept drift}) é uma mudança na distribuição dos dados utilizados para construção do modelo - definição dos conceitos (classes) - durante a execução da aplicação. A figura \ref{fig1} representa um caso clássico de mudança de conceito: a alteração do perfil de compra do cliente ao longo do tempo.
+
+\begin{figure}[htbp]
+    \begin{center}
+      \includegraphics[scale=0.4]{001.png}
+    \caption{Mudança de conceito - Exemplo: Perfil de Compra}
+    \label{fig1}
+    \end{center}
+\end{figure}
+
+A evolução de conceito (\textit{concept evolution}) caracteriza-se pela aparição de novas classes, diferente das classes conhecidas. Essa nova classe representa uma evolução, por exemplo, um novo interesse do cliente. Para que seja possível aprimorar modelos baseados em FCDs, é necessário esquecer conceitos desatualizados ou obsoletos, que apenas ocupam espaço e degradam o resultado das predições \cite{Abdallah}.
+
+\subsection{Algoritmos de classificação e FCDs}
+
+Algoritmos de classificação aplicados a FCDs permitem predizer, com alta precisão, a classe de novos exemplos obtidos a partir do fluxo. 
+Durante o aprendizado supervisionado, um conjunto de dados previamente rotulado é fornecido ao algoritmo, para construção do modelo. A construção do modelo possibilita inferir a classe de novos exemplos que venham a ser encontrados. É importante que o modelo seja constantemente atualizado (evolua), para que contemple e classifique de forma correta novas distribuições de dados.
+
+Dentre os algoritmos de classificação para cenários tradicionais (informação em lote, \textit{batch}), estão: árvores de decisão, SVM e Naive Bayes. Esses algoritmos são aplicados em ambientes estacionários, isto é, em ambientes em que o modelo de decisão não requer atualizações e o algoritmo pode considerar que todos dados necessários podem ser armazenados em memória.
+
+Entretanto, o aprendizado de novos conceitos a partir de fluxos contínuos de dados ocorre de forma signitificamente diferente do modelo tradicional, estático. Para lidar 
+% Aprender novos conceitos a partir de Ćuxos contínuos de dados, de forma a atualizar o modelo de decisão constantemente, é signiĄcativamente diferente do aprendizado tradicional, no qual uma vez criado o modelo, este não se altera ao longo do tempo. Vários algoritmos projetados para cenários estáticos tem sido adaptados e novos algoritmos estão sendo desenvolvidos para atuar em cenários dinâmicos. 
 
 
 %hline

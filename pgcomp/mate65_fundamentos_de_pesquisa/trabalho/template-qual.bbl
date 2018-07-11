@@ -5,4 +5,43 @@
 \providecommand{\abntbstabout}[1]{}
 \abntbstabout{v-1.9.2 }
 
+\bibitem[Abdallah et al. 2016]{Abdallah}
+\abntrefinfo{Abdallah et al.}{ABDALLAH et al.}{2016}
+{ABDALLAH, Z. et al. Anynovel: detection of novel concepts in evolving data
+  streams.
+v.~7, p. 73--93, 06 2016.}
+
+\bibitem[Al-Khateeb et al. 2012]{malkhateeb}
+\abntrefinfo{Al-Khateeb et al.}{AL-KHATEEB et al.}{2012}
+{AL-KHATEEB, T.~M. et al. Cloud guided stream classification using class-based
+  ensemble. In:  \emph{2012 IEEE Fifth International Conference on Cloud
+  Computing}. [S.l.: s.n.], 2012. p. 694--701.
+ISSN 2159-6182.}
+
+\bibitem[Babcock et al. 2002]{Babcock:2002:MID:543613.543615}
+\abntrefinfo{Babcock et al.}{BABCOCK et al.}{2002}
+{BABCOCK, B. et al. Models and issues in data stream systems. In:
+  \emph{Proceedings of the Twenty-first ACM SIGMOD-SIGACT-SIGART Symposium on
+  Principles of Database Systems}. New York, NY, USA: ACM, 2002.  (PODS '02),
+  p. 1--16.
+ISBN 1-58113-507-6. Dispon{\'\i}vel em:
+  \url{http://doi.acm.org/10.1145/543613.543615}.}
+
+\bibitem[Gama et al. 2014]{Gama:2014:survey}
+\abntrefinfo{Gama et al.}{GAMA et al.}{2014}
+{GAMA, J.~a. et al. A survey on concept drift adaptation.
+\emph{ACM Comput. Surv.}, ACM, New York, NY, USA, v.~46, n.~4, p. 44:1--44:37,
+  mar. 2014.
+ISSN 0360-0300.
+Dispon{\'\i}vel em: \url{http://doi.acm.org/10.1145/2523813}.}
+
+\bibitem[Spinosa, Carvalho e Gama 2009]{Spinosa:2009:NDA:1551768.1551770}
+\abntrefinfo{Spinosa, Carvalho e Gama}{SPINOSA; CARVALHO; GAMA}{2009}
+{SPINOSA, E.~J.; CARVALHO, A.~P. de~Leon F.~de; GAMA, J.~a. Novelty detection
+  with application to data streams.
+\emph{Intell. Data Anal.}, IOS Press, Amsterdam, The Netherlands, The
+  Netherlands, v.~13, n.~3, p. 405--422, ago. 2009.
+ISSN 1088-467X.
+Dispon{\'\i}vel em: \url{http://dl.acm.org/citation.cfm?id=1551768.1551770}.}
+
 \end{thebibliography}

@@ -1,3 +1,5 @@
 \select@language {brazil}
 \contentsline {chapter}{Cap\'{\i }tulo~1---Revis\~{a}o Bibliogr\'{a}fica}{1}
 \contentsline {subsection}{\numberline {1.0.1}Introdu\IeC {\c c}\IeC {\~a}o}{1}
+\contentsline {subsection}{\numberline {1.0.2}Fluxos Cont\IeC {\'\i }nuos de Dados}{1}
+\contentsline {subsection}{\numberline {1.0.3}Algoritmos de classifica\IeC {\c c}\IeC {\~a}o e FCDs}{3}
