@@ -193,13 +193,13 @@ Os algoritmos de aprendizagem de máquina baseados em fluxos de dados contínuos
 devido a natureza dinâmica das FCDs.
 Esses algoritmos devem se adaptar às constantes mudanças de distribuição dos dados, para não se tornarem imprecisos ou obsoletos.
 
-Portanto, a atividade de Detecção de Novidades (DN) - \textit{Concept Drift} - é essencial para o bom funcionamento dessas técnicas. A atividade de DN permite identificar o surgimento de novos conceitos e mudanças em conceitos existentes, possibilitando a atualização do modelo de decisão. Novas técnicas de aprendizado ativo têm sido exploradas com o objetivo de aprimorar o processo de classificação e identificação de mudanças de conceito. 
+Portanto, a atividade de Detecção de Novidades (DN) - \textit{Concept Drift} - é essencial para o bom funcionamento dessas técnicas. A atividade de DN permite identificar o surgimento de novos conceitos e mudanças em conceitos existentes, ensejando a atualização do modelo de decisão. Novas técnicas de aprendizado ativo têm sido exploradas com o objetivo de aprimorar o processo de classificação e identificação de mudanças de conceito. 
 
 \subsection{Fluxos Contínuos de Dados}
 
-Fluxos Contínuos de Dados (FCDs) podem ser definidos como sequências contínuas de dados, de tamanho ilimitado, sem ordem definida e de alta frequência \cite{Babcock:2002:MID:543613.543615}. Novos algoritmos têm sido desenvolvidos para trabalhar com fluxos desse tipo, por exemplo: CLAM \cite{malkhateeb} e OLINDDA \cite{Spinosa:2009:NDA:1551768.1551770}. O desenvolvimento de algoritmos de aprendizado para esses cenários é uma tarefa custosa, pois devem lidar com sequências de dados geradas de forma contínua, em alta velocidade e cuja distribuição pode sofrer alterações ao longo do tempo \cite{Gama:2014:survey}.
+Fluxos Contínuos de Dados (FCDs) podem ser definidos como sequências contínuas de dados, de tamanho ilimitado, sem ordem definida e de alta frequência \cite{Babcock:2002:MID:543613.543615}. Novos algoritmos têm sido desenvolvidos para trabalhar com fluxos desse tipo, por exemplo: CLAM \cite{malkhateeb} e OLINDDA \cite{Spinosa:2009:NDA:1551768.1551770}. O desenvolvimento de algoritmos de aprendizado para esses cenários é uma tarefa custosa, pois estes devem lidar com sequências de dados geradas de forma contínua, em alta velocidade e cuja distribuição pode sofrer alterações ao longo do tempo \cite{Gama:2014:survey}.
 
-Os avanços recentes em hardware e software permitiram a aquisição de dados em maior escala, o que caracteriza ambientes dinâmicos, enquanto bases de dados tradicionais supõem cenários estacionários. O contínuo avanço das tecnologias, surgiram diversas aplicações do mundo real baseadas em fluxos contínuos de dados: 
+Os avanços recentes em hardware e software permitiram a aquisição de dados em maior escala. O aumento da frequência e da quantidade dos dados obtidos originou a ideia de ambientes dinâmicos, completamente diferentes das bases de dados tradicionais, que supõem cenários estáticos. Os avanços tecnológicos também permitiram o surgimento de diversas aplicações do mundo real com essas características: 
 
 \begin{itemize}
     \item \textbf{Sistemas de Segurança}: monitoramento contínuo através de imagens ou outros sensores para identificação de intrusos;
@@ -221,7 +221,7 @@ Conforme \cite{Gama:2014:survey}, as principais características dos fluxos cont
     \item \textbf{Potencialmente Infinitos}: Os fluxos são potencionalmente infinitos, o que impede o completo armazenamento em memória.
 \end{itemize}
 
-Essas propriedades inviabilizam a aplicação dos algoritmos tradicionais de mineração de dados (MD) e aprendizagem de máquina, a fluxos de dados contínuos.
+Essas propriedades inviabilizam a aplicação dos algoritmos tradicionais de mineração de dados (MD) e aprendizagem de máquina em cenários com FCDs.
 
 Mudança de conceito (\textit{concept drift}) é uma mudança na distribuição dos dados utilizados para construção do modelo - definição dos conceitos (classes) - durante a execução da aplicação. A figura \ref{fig1} representa um caso clássico de mudança de conceito: a alteração do perfil de compra do cliente ao longo do tempo.
 
