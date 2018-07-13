@@ -11,6 +11,12 @@
   streams.
 v.~7, p. 73--93, 06 2016.}
 
+\bibitem[Aggarwal 2006]{Aggarwal:2006:DSM:1196418}
+\abntrefinfo{Aggarwal}{AGGARWAL}{2006}
+{AGGARWAL, C.~C. \emph{Data Streams: Models and Algorithms (Advances in
+  Database Systems)}. Berlin, Heidelberg: Springer-Verlag, 2006.
+ISBN 0387287590.}
+
 \bibitem[Al-Khateeb et al. 2012]{malkhateeb}
 \abntrefinfo{Al-Khateeb et al.}{AL-KHATEEB et al.}{2012}
 {AL-KHATEEB, T.~M. et al. Cloud guided stream classification using class-based
@@ -27,6 +33,13 @@ ISSN 2159-6182.}
 ISBN 1-58113-507-6. Dispon{\'\i}vel em:
   \url{http://doi.acm.org/10.1145/543613.543615}.}
 
+\bibitem[Farid e Rahman 2012]{Farid:6471629}
+\abntrefinfo{Farid e Rahman}{FARID; RAHMAN}{2012}
+{FARID, D.~M.; RAHMAN, C.~M. Novel class detection in concept-drifting data
+  stream mining employing decision tree. In:  \emph{2012 7th International
+  Conference on Electrical and Computer Engineering}. [S.l.: s.n.], 2012. p.
+  630--633.}
+
 \bibitem[Gama et al. 2014]{Gama:2014:survey}
 \abntrefinfo{Gama et al.}{GAMA et al.}{2014}
 {GAMA, J.~a. et al. A survey on concept drift adaptation.
@@ -34,6 +47,38 @@ ISBN 1-58113-507-6. Dispon{\'\i}vel em:
   mar. 2014.
 ISSN 0360-0300.
 Dispon{\'\i}vel em: \url{http://doi.acm.org/10.1145/2523813}.}
+
+\bibitem[Hayat e Hashemi 2010]{Hayat:5686734}
+\abntrefinfo{Hayat e Hashemi}{HAYAT; HASHEMI}{2010}
+{HAYAT, M.~Z.; HASHEMI, M.~R. A dct based approach for detecting novelty and
+  concept drift in data streams. In:  \emph{2010 International Conference of
+  Soft Computing and Pattern Recognition}. [S.l.: s.n.], 2010. p. 373--378.}
+
+\bibitem[Ienco, Pfahringer e Zliobait 2014]{Ienco:2014}
+\abntrefinfo{Ienco, Pfahringer e Zliobait}{IENCO; PFAHRINGER; ZLIOBAIT}{2014}
+{IENCO, D.; PFAHRINGER, B.; ZLIOBAIT, I. High density-focused uncertainty
+  sampling for active learning over evolving stream data. In:
+  \emph{Proceedings of the 3rd International Conference on Big Data, Streams
+  and Heterogeneous Source Mining: Algorithms, Systems, Programming Models and
+  Applications - Volume 36}. JMLR.org, 2014.  (BIGMINE14), p. 133--148.
+  Dispon{\'\i}vel em: \url{http://dl.acm.org/citation.cfm?id=2999973.2999984}.}
+
+\bibitem[Masud et al. 2010]{Masud:2010:ACC:1933307.1934606}
+\abntrefinfo{Masud et al.}{MASUD et al.}{2010}
+{MASUD, M.~M. et al. Addressing concept-evolution in concept-drifting data
+  streams. In:  \emph{Proceedings of the 2010 IEEE International Conference on
+  Data Mining}. Washington, DC, USA: IEEE Computer Society, 2010.  (ICDM '10),
+  p. 929--934.
+ISBN 978-0-7695-4256-0. Dispon{\'\i}vel em:
+  \url{http://dx.doi.org/10.1109/ICDM.2010.160}.}
+
+\bibitem[Riccardi e Hakkani-Tur 2005]{Tong:2001}
+\abntrefinfo{Riccardi e Hakkani-Tur}{RICCARDI; HAKKANI-TUR}{2005}
+{RICCARDI, G.; HAKKANI-TUR, D. Active learning: theory and applications to
+  automatic speech recognition.
+\emph{IEEE Transactions on Speech and Audio Processing}, v.~13, n.~4, p.
+  504--511, July 2005.
+ISSN 1063-6676.}
 
 \bibitem[Spinosa, Carvalho e Gama 2009]{Spinosa:2009:NDA:1551768.1551770}
 \abntrefinfo{Spinosa, Carvalho e Gama}{SPINOSA; CARVALHO; GAMA}{2009}

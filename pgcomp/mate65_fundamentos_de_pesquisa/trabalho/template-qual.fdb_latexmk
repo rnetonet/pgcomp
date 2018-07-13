@@ -1,16 +1,16 @@
 # Fdb version 3
-["bibtex template-qual"] 1531273202 "template-qual.aux" "template-qual.bbl" "template-qual" 1531276950
+["bibtex template-qual"] 1531455013 "template-qual.aux" "template-qual.bbl" "template-qual" 1531455014
   "./abntex2-alf.bst" 1530616731 63287 1073317cf2aaa1ae7cb902d84de1bb0a ""
   "abntex2-options.bib" 1530616731 5396 4eb260dac60f150ae608d45252853090 ""
-  "biblio.bib" 1531273109 3942 76f4c4c860421b97eaf01e5b3b658f44 ""
-  "template-qual.aux" 1531276950 2234 abd92c5deaca8bca12f2060c60c5a225 ""
+  "biblio.bib" 1531450557 8126 11899283c3225a944f05fd71ae379827 ""
+  "template-qual.aux" 1531455014 4369 3b342d9debf4c2ae6c075497d6c8be15 ""
   "template-qual.bcf" 0 -1 0 ""
   (generated)
-  "template-qual.bbl"
   "template-qual.blg"
-["pdflatex"] 1531276949 "/home/rnetonet/Workspace/study/pgcomp/mate65_fundamentos_de_pesquisa/trabalho/template-qual.tex" "template-qual.pdf" "template-qual" 1531276950
+  "template-qual.bbl"
+["pdflatex"] 1531455013 "/home/rnetonet/Workspace/study/pgcomp/mate65_fundamentos_de_pesquisa/trabalho/template-qual.tex" "template-qual.pdf" "template-qual" 1531455014
   "/etc/texmf/web2c/texmf.cnf" 1524765424 1101 af7716885e081ab43982cab7b4672c1a ""
-  "/home/rnetonet/Workspace/study/pgcomp/mate65_fundamentos_de_pesquisa/trabalho/template-qual.tex" 1531276949 12548 28df2d1a056d1fe3958efd4b0035bb4e ""
+  "/home/rnetonet/Workspace/study/pgcomp/mate65_fundamentos_de_pesquisa/trabalho/template-qual.tex" 1531455012 23626 6cfc49866eed756fd90271c45e29a966 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -23,6 +23,7 @@
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm" 1246382020 940 228d6584342e91276bf566bcf9716b83 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1136768653 1328 c834bbb027764024c09d3d2bf908b5f0 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm" 1136768653 1324 c910af8c371558dc20f2d7822f66fe64 ""
+  "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbxti10.tfm" 1136768653 1532 9162035f4e7176612125649e348e2195 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmex10.tfm" 1136768653 992 662f679a0b3d2d53c1b94050fdaa3f50 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm" 1136768653 1524 4414a8315f39513458b80dfc63bff03a ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi6.tfm" 1136768653 1512 f21f83efb36853c0b70002322c1ab3ad ""
@@ -45,6 +46,7 @@
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmti12.tfm" 1136768653 1484 ed72f8f5cf654cda15ecc8e32bfcbee5 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb" 1248133631 34811 78b52f49e893bcba91bd7581cdc144c0 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1248133631 32080 340ef9bf63678554ee606688e7b5339d ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb" 1248133631 36554 b67dc2cfa451409e100b3fcf5f506509 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1248133631 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1248133631 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
@@ -147,14 +149,14 @@
   "abntex2abrev.sty" 1530616731 5727 ae50c48c6ed1c9912daeb0722d62578a ""
   "abntex2cite.sty" 1530616731 45044 64cc69bfee4ed39be3e85129839d84f6 ""
   "lipsum.sty" 1530616731 103491 f3a8d28ba533bcdb24167b15de14ff22 ""
-  "template-qual.aux" 1531276950 2234 abd92c5deaca8bca12f2060c60c5a225 ""
-  "template-qual.bbl" 1531273202 1989 435ef6c56bcdbb9f666a6ddf28eff279 "bibtex template-qual"
-  "template-qual.tex" 1531276949 12548 28df2d1a056d1fe3958efd4b0035bb4e ""
-  "template-qual.toc" 1531276950 374 f17113ed82a8a8dc3df274ce10463679 ""
+  "template-qual.aux" 1531455014 4369 3b342d9debf4c2ae6c075497d6c8be15 ""
+  "template-qual.bbl" 1531455013 4267 05155ed09a43ae04b94aa3b30104f977 "bibtex template-qual"
+  "template-qual.tex" 1531455012 23626 6cfc49866eed756fd90271c45e29a966 ""
+  "template-qual.toc" 1531455014 715 477bb3fa40d39b289e3007882f92bd01 ""
   "ufba.pdf" 1530616731 305767 269f52de33709ea8677a2f628330b278 ""
   "ufbathesis.cls" 1530616731 40400 158d5f0a8f9d010f02bcf855d1ef5a38 ""
   (generated)
+  "template-qual.pdf"
   "template-qual.log"
   "template-qual.toc"
   "template-qual.aux"
-  "template-qual.pdf"
