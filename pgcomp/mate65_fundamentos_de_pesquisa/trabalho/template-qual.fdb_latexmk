@@ -1,16 +1,16 @@
 # Fdb version 3
-["bibtex template-qual"] 1531455843 "template-qual.aux" "template-qual.bbl" "template-qual" 1531455844
+["bibtex template-qual"] 1531580089 "template-qual.aux" "template-qual.bbl" "template-qual" 1531582380
   "./abntex2-alf.bst" 1530616731 63287 1073317cf2aaa1ae7cb902d84de1bb0a ""
   "abntex2-options.bib" 1530616731 5396 4eb260dac60f150ae608d45252853090 ""
   "biblio.bib" 1531450557 8126 11899283c3225a944f05fd71ae379827 ""
-  "template-qual.aux" 1531455844 4369 3b342d9debf4c2ae6c075497d6c8be15 ""
+  "template-qual.aux" 1531582380 3948 535acdf5eed9f4ca9e0bd8fcf2e77855 ""
   "template-qual.bcf" 0 -1 0 ""
   (generated)
-  "template-qual.bbl"
   "template-qual.blg"
-["pdflatex"] 1531455843 "/home/rnetonet/Workspace/study/pgcomp/mate65_fundamentos_de_pesquisa/trabalho/template-qual.tex" "template-qual.pdf" "template-qual" 1531455844
+  "template-qual.bbl"
+["pdflatex"] 1531582379 "/home/rnetonet/Workspace/study/pgcomp/mate65_fundamentos_de_pesquisa/trabalho/template-qual.tex" "template-qual.pdf" "template-qual" 1531582380
   "/etc/texmf/web2c/texmf.cnf" 1524765424 1101 af7716885e081ab43982cab7b4672c1a ""
-  "/home/rnetonet/Workspace/study/pgcomp/mate65_fundamentos_de_pesquisa/trabalho/template-qual.tex" 1531455842 23704 6efe1604559690d3ab4c97d3e52a23f4 ""
+  "/home/rnetonet/Workspace/study/pgcomp/mate65_fundamentos_de_pesquisa/trabalho/template-qual.tex" 1531582379 23470 160e7f932faf9d571fbebebf1e5ae532 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -149,14 +149,14 @@
   "abntex2abrev.sty" 1530616731 5727 ae50c48c6ed1c9912daeb0722d62578a ""
   "abntex2cite.sty" 1530616731 45044 64cc69bfee4ed39be3e85129839d84f6 ""
   "lipsum.sty" 1530616731 103491 f3a8d28ba533bcdb24167b15de14ff22 ""
-  "template-qual.aux" 1531455844 4369 3b342d9debf4c2ae6c075497d6c8be15 ""
-  "template-qual.bbl" 1531455843 4267 05155ed09a43ae04b94aa3b30104f977 "bibtex template-qual"
-  "template-qual.tex" 1531455842 23704 6efe1604559690d3ab4c97d3e52a23f4 ""
-  "template-qual.toc" 1531455844 715 477bb3fa40d39b289e3007882f92bd01 ""
+  "template-qual.aux" 1531582380 3948 535acdf5eed9f4ca9e0bd8fcf2e77855 ""
+  "template-qual.bbl" 1531580089 3600 4194a369de9870ab402779f49b63d471 "bibtex template-qual"
+  "template-qual.tex" 1531582379 23470 160e7f932faf9d571fbebebf1e5ae532 ""
+  "template-qual.toc" 1531582380 715 73b1dc55378bf07dc8ba1b0eec2d4642 ""
   "ufba.pdf" 1530616731 305767 269f52de33709ea8677a2f628330b278 ""
   "ufbathesis.cls" 1530616731 40400 158d5f0a8f9d010f02bcf855d1ef5a38 ""
   (generated)
-  "template-qual.pdf"
   "template-qual.log"
-  "template-qual.aux"
+  "template-qual.pdf"
   "template-qual.toc"
+  "template-qual.aux"
