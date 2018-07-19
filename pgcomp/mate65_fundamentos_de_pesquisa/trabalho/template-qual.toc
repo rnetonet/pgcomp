@@ -6,4 +6,4 @@
 \contentsline {subsection}{\numberline {1.0.4}Detec\IeC {\c c}\IeC {\~a}o de Novidades em FCDs}{4}
 \contentsline {subsection}{\numberline {1.0.5}Aprendizado Ativo e FCDs}{5}
 \contentsline {subsection}{\numberline {1.0.6}Algoritmos para DN em FCDs}{5}
-\contentsline {subsection}{\numberline {1.0.7}Considera\IeC {\c c}\IeC {\~o}es Finais}{7}
+\contentsline {subsection}{\numberline {1.0.7}Considera\IeC {\c c}\IeC {\~o}es Finais}{6}
