@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 
-filename = 'raw_2014.csv'
+filename = 'raw_2016.csv'
 raw_df = pd.read_csv(filename)
 
 votacoes = raw_df.votacao_id.unique()
