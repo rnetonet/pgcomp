@@ -5,5 +5,5 @@ Hipótese:
 
 Atividades:
 
-- Estudar MOA (interface, implementação API, como contribuir);
+1. Estudar MOA (interface, implementação API, como contribuir);
 - Estudar métodos de Concept Drift do MOA;
