@@ -1,5 +1,5 @@
-This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
-Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+This is BibTeX, Version 0.99d (TeX Live 2017/Debian)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: anotacoes.aux
 The style file: abntex2-alf.bst
 Reallocated singl_function (elt_size=4) to 100 items from 50.
@@ -22,44 +22,44 @@ Reallocated glb_str_end (elt_size=4) to 20 items from 10.
 | Em caso de dúvidas ou problemas com este estilo procure |
 | http://abntex2.googlecode.com                           |
 +---------------------------------------------------------+
-You've used 1 entry,
+You've used 7 entries,
             6711 wiz_defined-function locations,
-            1197 strings with 9328 characters,
-and the built_in function-call counts, 891 in all, are:
-= -- 192
-> -- 0
-< -- 0
-+ -- 46
-- -- 0
-* -- 36
-:= -- 175
-add.period$ -- 0
-call.type$ -- 1
-change.case$ -- 3
-chr.to.int$ -- 1
-cite$ -- 0
-duplicate$ -- 3
-empty$ -- 40
-format.name$ -- 0
-if$ -- 204
+            1243 strings with 10130 characters,
+and the built_in function-call counts, 6514 in all, are:
+= -- 705
+> -- 130
+< -- 103
++ -- 178
+- -- 40
+* -- 398
+:= -- 898
+add.period$ -- 20
+call.type$ -- 7
+change.case$ -- 53
+chr.to.int$ -- 25
+cite$ -- 6
+duplicate$ -- 487
+empty$ -- 339
+format.name$ -- 186
+if$ -- 1390
 int.to.chr$ -- 0
 int.to.str$ -- 0
-missing$ -- 10
-newline$ -- 8
-num.names$ -- 0
-pop$ -- 28
+missing$ -- 111
+newline$ -- 40
+num.names$ -- 30
+pop$ -- 158
 preamble$ -- 1
-purify$ -- 3
+purify$ -- 23
 quote$ -- 0
-skip$ -- 80
+skip$ -- 558
 stack$ -- 1
-substring$ -- 49
-swap$ -- 0
-text.length$ -- 0
+substring$ -- 281
+swap$ -- 190
+text.length$ -- 13
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 2
+while$ -- 42
 width$ -- 0
-write$ -- 8
+write$ -- 101

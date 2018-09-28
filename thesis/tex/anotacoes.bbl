@@ -5,4 +5,39 @@
 \providecommand{\abntbstabout}[1]{}
 \abntbstabout{v-1.9.2 }
 
+\bibitem[Hinkley 1970]{Hinkley}
+\abntrefinfo{Hinkley}{HINKLEY}{1970}
+{HINKLEY, D. Inference about the change-point in a sequence of random
+  variables.
+v.~57, 04 1970.}
+
+\bibitem[McGilchrist e Woodyer 1975]{McGilchrist_and_Woodyer}
+\abntrefinfo{McGilchrist e Woodyer}{MCGILCHRIST; WOODYER}{1975}
+{MCGILCHRIST, C. A.; WOODYER, K. D. Note on a distribution-free cusum
+  technique.
+v.~17, p. 321--325, 08 1975.}
+
+\bibitem[PAGE 1954]{Page}
+\abntrefinfo{PAGE}{PAGE}{1954}
+{PAGE, E.~S. Continuous inspection schemes.
+\emph{Biometrika}, v.~41, n.~1-2, p. 100--115, 1954.
+Dispon{\'\i}vel em: \url{http://dx.doi.org/10.1093/biomet/41.1-2.100}.}
+
+\bibitem[Pettitt 1979]{Pettitt}
+\abntrefinfo{Pettitt}{PETTITT}{1979}
+{PETTITT, A. A non-parametric approach to the change-point problem.
+v.~28, 01 1979.}
+
+\bibitem[Sen e Srivastava 1975]{Sen_and_Srivastava}
+\abntrefinfo{Sen e Srivastava}{SEN; SRIVASTAVA}{1975}
+{SEN, A.; SRIVASTAVA, M. On tests for detecting change in mean.
+v.~3, 01 1975.}
+
+\bibitem[SMITH 1975]{Smith}
+\abntrefinfo{SMITH}{SMITH}{1975}
+{SMITH, A. F.~M. A bayesian approach to inference about a change-point in a
+  sequence of random variables.
+\emph{Biometrika}, v.~62, n.~2, p. 407--416, 1975.
+Dispon{\'\i}vel em: \url{http://dx.doi.org/10.1093/biomet/62.2.407}.}
+
 \end{thebibliography}

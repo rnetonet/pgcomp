@@ -81,12 +81,12 @@
 %% Inicio do documento
 \begin{document}
 
-\pgcompfrontpage
+%\pgcompfrontpage
 
 %% Parte pre-textual
-\frontmatter
+%\frontmatter
 
-\pgcomppresentationpage
+%\pgcomppresentationpage
 
 
 %%%%%%%%%%%%%%%%%%%%%
@@ -94,11 +94,11 @@
 %%%%%%%%%%%%%%%%%%%%%
 
 \resumo
-Anotações realizadas durante a pesquisa pré-qualificação.
+Anotações realizadas durante a pesquisa exploratória pré-qualificação.
 
 % Palavras-chave do resumo em Portugues
 \begin{keywords}
-Concept drift, change point
+	Concept drift, change-point, detecção de novidades.
 \end{keywords}
 
 %%%%%%%%%%%%%%%%%%%
@@ -119,13 +119,230 @@ Concept drift, change point
 % Importante: 
 % Use \xchapter{}{} ao inves de \chapter{}; se n�o quiser colocar texto antes do inicio do capitulo, use \xchapter{texto}{}.
 
-\xchapter{Estudos Preliminares}{}
+\xchapter{Implementação Pettitt - MOA}{}
 
-\section{Implementação Pettitt - MOA}
 
-\subsection{Método de Pettitt}
+A fim de verificar a viabilidade de adaptar métodos estatísticos aplicados ao
+problema de \textit{change-point} para detecção de \textit{concept drifts} em
+\textit{stream} de dados, foi realizada a implementação do método de Pettitt
+\cite{Pettitt} no MOA (https://moa.cms.waikato.ac.nz/).
 
-O método de Pettitt
+Observações sobre o método:
+
+\begin{itemize}
+	\item \textit{Nonparametric} - Dados não precisam estar numa distribuição normal. Os números observados são ordinais, indicando posição em um ranqueamento
+	\item Hipótese \textbf{null}: não houveram mudanças
+	\item Não requer conhecimento sobre a distribuição inicial
+\end{itemize}
+
+Datasets utilizados:
+
+\begin{itemize}
+	\item Page \cite{Page} - de forma contínua (números racionais...tem de -1.05 a 3.29) e como
+	      observações de Bernoulli (0, se $<= 0$, 1, se $> 0$). Testes exatos e conservadores.
+
+	\item The Lindisfarne Scribes - binomial (contagem de palavras terminadas em \textit{-s} e \textit{-a}). Acreditava-se que autores diferentes faziam usos diferentes dessas terminações. Testes exatos e conservadores.
+
+	\item Dados industriais. Percentual de uma material em uma sequências de 27 lotes produzidos. Testes aproximados.
+\end{itemize}
+
+Outras técnicas citadas por Pettitt. Algumas delas foram, de fato, adaptadas para
+técnicas de detecção de \textit{concept drift}:
+
+\begin{itemize}
+	\item Page - CUSUM \cite{Page}.
+
+	\item Sen and Srivastava \cite{Sen_and_Srivastava} - Testes no nível da média para um modelo normal.
+
+	\item Hinkley \cite{Hinkley} - Probabilidade entre valor especificado de T e a estimativa de T.
+
+	\item Smith \cite{Smith} considers a Bayesian approach to making inferences about the change-point.
+
+	\item McGilchrist and Woodyer \cite{McGilchrist_and_Woodyer} consider a distribution-free CUSUM and
+\end{itemize}
+
+\textbf{Obs:} A maioria desses métodos assume conhecimentos sobre a distribuição inicial dos dados.
+O método proposto por Pettitt dispensa esse conhecimento prévio.
+
+\section{Implementação em R}
+
+\begin{verbatim}
+    concept.drift<-function(x, plot=T){
+        dataS <- length(x)
+        vecSize <- 1:dataS
+        dataRank <- rank(x)
+        sumData <- sapply(vecSize, 
+            function(x) 2 * sum(dataRank[1:x]) - x * (dataS + 1))
+        absSumData <- abs(sumData)
+        maxAbsSumData <- max(absSumData)
+        change.point<-vecSize[maxAbsSumData == absSumData]
+        if(plot){
+            plot(x, t="l", main=paste("Concept Drift:", change.point))
+            abline(v=change.point, col="red")
+        }
+        change.point
+    }    
+\end{verbatim}
+
+\section{Implementação em Java/MOA}
+
+\begin{verbatim}
+    package moa.classifiers.core.driftdetection;
+
+    import com.github.javacliparser.FloatOption;
+    import com.github.javacliparser.IntOption;
+    import moa.core.ObjectRepository;
+    import moa.tasks.TaskMonitor;
+    
+    import java.util.*;
+    
+    /**
+     * Drift detection method based in Pettitt
+     *
+     *
+     * @author Ruivaldo Neto (rneto@rneto.net)
+     * @version $Revision: 7 $
+     */
+    public class Pettitt extends AbstractChangeDetector {
+    
+        private static final long serialVersionUID = 5210470661274384763L;
+    
+        public IntOption minNumInstancesOption = new IntOption(
+                "minNumInstances",
+                'n',
+                "The minimum number of instances before permitting detecting change.",
+                100, 0, Integer.MAX_VALUE);
+    
+    
+        private ArrayList<Double> dataList;
+        private Integer changePoint;
+        private Integer nDataWhenChangePoint;
+    
+        public Pettitt() {
+            resetLearning();
+        }
+    
+        @Override
+        public void resetLearning() {
+            this.dataList = new ArrayList<Double>();
+    
+            this.changePoint = null;
+            this.nDataWhenChangePoint = null;
+    
+            this.isChangeDetected = false;
+            this.isInitialized = false;
+        }
+    
+        @Override
+        public void input(double inputData) {
+            if (this.isChangeDetected) {
+                this.isChangeDetected = false;
+                dataList.add(inputData);
+                return;
+            }
+    
+            dataList.add(inputData);
+    
+            int dataS = dataList.size();
+    
+            int[] vecSize = new int[dataS];
+            for (int i = 1; i <= dataS; i++) {
+                vecSize[i - 1] = i;
+            }
+    
+            Double[] data = new Double[dataS];
+            dataList.toArray(data);
+    
+            int[] dataRank = rank(data);
+    
+            int[] dataRankSum = new int[dataS];
+            dataRankSum[0] = dataRank[0];
+            for (int i = 1; i < dataRank.length; i++) {
+                dataRankSum[i] = dataRank[i] + dataRankSum[i - 1];
+            }
+    
+            int[] sumData = new int[dataS];
+            for (int i = 1; i < sumData.length; i++) {
+                sumData[i] = (2 * dataRankSum[i]) - (i * (dataS + 1));
+            }
+    
+            int[] absSumData = new int[dataS];
+            for (int i = 0; i < absSumData.length; i++) {
+                absSumData[i] = Math.abs(sumData[i]);
+            }
+    
+            Integer maxAbsSumData = Arrays.stream(absSumData).max().getAsInt();
+    
+            // Find Index
+            int newChangePoint = 0;
+            for (newChangePoint = 0; newChangePoint < absSumData.length; newChangePoint++) {
+                if (absSumData[newChangePoint] == maxAbsSumData) {
+                    break;
+                }
+            }
+    
+            // First Index
+            if (this.changePoint == null) {
+                this.changePoint = newChangePoint;
+                this.nDataWhenChangePoint = this.dataList.size();
+                return;
+            }
+    
+            // If different, concept drift
+            int changePointDelta = newChangePoint - this.changePoint;
+            int nDataDelta = dataList.size() - this.nDataWhenChangePoint;
+    
+            if (changePointDelta >= this.minNumInstancesOption.getValue() && changePointDelta >= nDataDelta / 2 + 1) {
+                this.changePoint = newChangePoint;
+                this.nDataWhenChangePoint = this.dataList.size();
+    
+                this.isChangeDetected = true;
+    
+                return;
+            }
+        }
+    
+        private static int[] rank(Double[] x){
+            int [] R = new int[x.length];
+            if(x.length == 0)return R;
+            Integer [] I = new Integer[x.length];
+            for(int i = 0; i < x.length; i++) {
+                I[i] = i;
+            }
+            Arrays.sort(I, (i0, i1) -> (int) Math.signum(x[i0]-x[i1]));
+            int j = 0;
+            for(int i = 0; i < x.length; i++){
+                if(x[I[i]] != x[I[j]])
+                    j = i;
+                R[I[i]] = j;
+            }
+            return R;
+        }
+    
+        @Override
+        public void getDescription(StringBuilder sb, int indent) {
+            // TODO Auto-generated method stub
+        }
+    
+        @Override
+        protected void prepareForUseImpl(TaskMonitor monitor,
+                                         ObjectRepository repository) {
+            // TODO Auto-generated method stub
+        }
+    }
+\end{verbatim}
+
+Considerações a cerca da implementação e testes:
+
+\begin{itemize}
+    \item Detecta mesmo quando não há drift;
+    \item Muito sensível;
+    \item Necessário adequar um método de janela (?)
+\end{itemize}
+
+\xchapter{outra coisa...}{}
+
+teste
 
 %% Parte pos-textual
 \backmatter
