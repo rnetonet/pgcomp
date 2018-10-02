@@ -93,13 +93,13 @@
 % Resumo em Portugues
 %%%%%%%%%%%%%%%%%%%%%
 
-\resumo
-Anotações realizadas durante a pesquisa exploratória pré-qualificação.
+%\resumo
+%Anotações realizadas durante a pesquisa.
 
 % Palavras-chave do resumo em Portugues
-\begin{keywords}
-	Concept drift, change-point, detecção de novidades.
-\end{keywords}
+%\begin{keywords}
+%	Concept drift, change-point, detecção de novidades.
+%\end{keywords}
 
 %%%%%%%%%%%%%%%%%%%
 % Sumario / Indice
@@ -345,7 +345,7 @@ Considerações a cerca da implementação e testes:
 \section{DetectA: abrupt concept drift detection in non-stationary \cite{ESCOVEDO2018119}}
 
 \begin{itemize}
-    \item \textit{Concept Drift} é bastante comum. A maior parte dos problemas reais, tem que lidar
+    \item \textit{Concept Drift} é bastante comum. Presente em parte significativa dos problemas do "mundo real"
     \item É fruto de ambientes não estacionários
     \item Os problemas de classificação são os mais afetados, pois as predições acabam invalidadas
     \item Atualizar o modelo frequentemente mitiga, mas é custoso
@@ -358,8 +358,8 @@ Considerações a cerca da implementação e testes:
     \end{itemize}
     \item Formas de lidar com \textit{Concept Drift}:
     \begin{itemize}
-        \item \textit{Passive / Reactive}: Passe o dado por modelo. Detecta mudança a partir do incremento da taxa de erro da predição
-        \item \textit{Proactive}: Detecta a mudança antes da predição, podendo trazer resultados mais satisfatórios.
+        \item \textit{Passive / Reactive}: Trabalha com a taxa de erro. Logo, tem que fazer predições erradas para poder começar a detectar a mudança
+        \item \textit{Proactive}: Detecta a mudança antes da predição, evitando erros e podendo trazer resultados mais satisfatórios.
     \end{itemize}
     \item O \textit{DetectA} é uma continuação do trabalho \textbf{A2D2: A pre-event abrupt drift detection} \cite{Escovedo2015A2D2AP}
     \item Nomeclaturas utilizadas para se referir a \textit{Concept Drift}: \textit{Change Detection}
@@ -368,7 +368,7 @@ Considerações a cerca da implementação e testes:
     \begin{itemize}
         \item Metodologias para detecção de mudanças na distribuição dos dados
         \item Pode utilizar dados da performance do classificador (\textit{error rate}) ou os próprios dados
-        \item Normalmente observam as seguintes características dos dados:
+        \item Normalmente observam as seguintes características:
         \begin{itemize}
             \item Desvio Padrão
             \item \textit{Error rate} do modelo
@@ -377,14 +377,14 @@ Considerações a cerca da implementação e testes:
         \end{itemize}
     \end{itemize}
 
-    \item Foco do trabalho é em Classificação. Mas \textit{Concept Drift} ocorre em regressões, séries temporais, etc, também
+    \item Foco do trabalho é em Classificação. Mas \textit{Concept Drift} também ocorre em regressões, séries temporais
     \item Outros métodos pró-ativos citados:
     \begin{itemize}
         \item \textit{PCA Feature Extraction for Change Detection in Multidimensional Unlabeled Data} \cite{PCAFeatureExtractionChangeDetection}: 
         \begin{itemize}
             \item Extrai componentes (PCA)
             \item Componentes com menor variância são mais sensíveis à mudança
-            \item Usa esses componentes através do método semi-paramétrico e \textit{log-likelihood} para detectar mudanças na média e variância
+            \item Usa esses componentes através do método semi-paramétrico \textit{log-likelihood} para detectar mudanças na média e variância, o que indicaria \textit{CD}
         \end{itemize}
 
         \item \textit{Proactive drift detection: Predicting concept drifts in data streams using probabilistic networks} \cite{ProactiveDriftDetectionProbabilistic}: 
@@ -392,18 +392,17 @@ Considerações a cerca da implementação e testes:
             \item Utiliza um histórico das taxas de mudança
             \item Diminui o número de detecção de falsos positivos
             \item Limitação: Usa a informação do intervalo do drift apenas para predizar novos locais de drift, comparando padrões
+            \item Entenda como campo minado: o histórico das posições das bombas é usado para "inferir" onde estarão as próximas (CDs)
         \end{itemize}
     \end{itemize}
 
-    \item Resumo do \textbf{DetectA}:
+    \item Resumo do método \textbf{DetectA}:
     \begin{itemize}
-        \item Agrupa os dados em clustes através de alg. não supervisionado (\textit{test data} e \textit{training data})
-        \item Cálculo estatísticos (matrizes de média e covariância) dos dados de treinamento e teste, condicionados aos clusters do passo 1, são calculadas
-        \item Resultados são comparados e analisados. Se um limite é ultrapassado, drift é identificado
-        \item \textit{* Suporta metodologia reativa e proativa:}
+        \item \textbf{Suporta metodologia reativa e proativa}
+        
         \begin{itemize}
             \item \textbf{Reativa:} Requer que os dados no instante $t$ e $t + 1$ tenham \textit{labels}. 
-            Não utiliza algoritmos de clusterização. Simplesmente calcula e compara $t$ e $t + 1$.
+            Não utiliza algoritmos de clusterização. Simplesmente calcula e compara informações estatísticas entre $t$ e $t + 1$.
             \item \textbf{Pró-ativa:} No instante $t + 1$, não existem \textit{labels}. A comparação é feita através da formação de clusters usando um algoritmo não-supervisionado aglomerativo (\textit{k-means}).
 
             Observações sobre o uso do algoritmo não-supervisionado aglobmerativo:
@@ -417,7 +416,7 @@ Considerações a cerca da implementação e testes:
 
     \item Conclusões:
     \begin{itemize}
-        \item O detector é eficiente e compatível com datasets de grande dimensionalidade, blocos de tamanho médio, para qualquer proporção de drift e balanceamento de classes
+        \item O detector é eficiente e compatível com datasets de grande dimensionalidade, blocos de tamanho médio, para qualquer proporção de drift e balanceamento das classes
         \item O trabalho também propõe um procedimento para produzir datasets com drifts abruptos
     \end{itemize}
 

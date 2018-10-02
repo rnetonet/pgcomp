@@ -1,16 +1,16 @@
 # Fdb version 3
-["bibtex anotacoes"] 1538445844 "anotacoes.aux" "anotacoes.bbl" "anotacoes" 1538445850
+["bibtex anotacoes"] 1538480857 "anotacoes.aux" "anotacoes.bbl" "anotacoes" 1538482038
   "./abntex2-alf.bst" 1538430665 63287 1073317cf2aaa1ae7cb902d84de1bb0a ""
   "abntex2-options.bib" 1538430665 5396 4eb260dac60f150ae608d45252853090 ""
-  "anotacoes.aux" 1538445850 3262 e7386f49be8ced3596ab200634f2c4c6 ""
+  "anotacoes.aux" 1538482037 3262 2f4060e2dfdae8d983ef236ff70dec8c ""
   "anotacoes.bcf" 0 -1 0 ""
   "biblio.bib" 1538442974 4299 831a9155d800c067cf6d8ff612c2f287 ""
   (generated)
-  "anotacoes.blg"
   "anotacoes.bbl"
-["pdflatex"] 1538445849 "/home/rnetonet/Workspace/pgcomp/thesis/tex/anotacoes.tex" "anotacoes.pdf" "anotacoes" 1538445850
+  "anotacoes.blg"
+["pdflatex"] 1538482037 "/home/rnetonet/Workspace/pgcomp/thesis/tex/anotacoes.tex" "anotacoes.pdf" "anotacoes" 1538482038
   "/etc/texmf/web2c/texmf.cnf" 1538430111 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/rnetonet/Workspace/pgcomp/thesis/tex/anotacoes.tex" 1538445849 16900 7d26d88d881b512b1c90a41fc6aeca17 ""
+  "/home/rnetonet/Workspace/pgcomp/thesis/tex/anotacoes.tex" 1538482037 16725 581501bd2f7d8c91c8f000d1151e3d2f ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1480098689 1408 5937f58aa508ea2cea4901c07d10f5fe ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1480098689 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -146,12 +146,12 @@
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1538431502 4128487 4318305c670f81356688d453b1ba7d18 ""
   "abntex2abrev.sty" 1538430665 5727 ae50c48c6ed1c9912daeb0722d62578a ""
   "abntex2cite.sty" 1538430665 45044 64cc69bfee4ed39be3e85129839d84f6 ""
-  "anotacoes.aux" 1538445850 3262 e7386f49be8ced3596ab200634f2c4c6 ""
-  "anotacoes.bbl" 1538445844 2891 57c279664be27bdd956fbf12f5ded72d "bibtex anotacoes"
-  "anotacoes.tex" 1538445849 16900 7d26d88d881b512b1c90a41fc6aeca17 ""
+  "anotacoes.aux" 1538482037 3262 2f4060e2dfdae8d983ef236ff70dec8c ""
+  "anotacoes.bbl" 1538480857 2891 57c279664be27bdd956fbf12f5ded72d "bibtex anotacoes"
+  "anotacoes.tex" 1538482037 16725 581501bd2f7d8c91c8f000d1151e3d2f ""
   "lipsum.sty" 1538430665 103491 f3a8d28ba533bcdb24167b15de14ff22 ""
   "ufbathesis.cls" 1538430665 40400 158d5f0a8f9d010f02bcf855d1ef5a38 ""
   (generated)
   "anotacoes.pdf"
-  "anotacoes.aux"
   "anotacoes.log"
+  "anotacoes.aux"
