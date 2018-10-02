@@ -5,11 +5,42 @@
 \providecommand{\abntbstabout}[1]{}
 \abntbstabout{v-1.9.2 }
 
+\bibitem[Chen, Koh e Riddle 2016]{ProactiveDriftDetectionProbabilistic}
+\abntrefinfo{Chen, Koh e Riddle}{CHEN; KOH; RIDDLE}{2016}
+{CHEN, K.; KOH, Y.~S.; RIDDLE, P. Proactive drift detection: Predicting concept
+  drifts in data streams using probabilistic networks. In:  \emph{2016
+  International Joint Conference on Neural Networks (IJCNN)}. [S.l.: s.n.],
+  2016. p. 780--787.
+ISSN 2161-4407.}
+
+\bibitem[Escovedo et al. 2018]{ESCOVEDO2018119}
+\abntrefinfo{Escovedo et al.}{ESCOVEDO et al.}{2018}
+{ESCOVEDO, T. et al. Detecta: abrupt concept drift detection in non-stationary
+  environments.
+\emph{Applied Soft Computing}, v.~62, p. 119 -- 133, 2018.
+ISSN 1568-4946.
+Dispon{\'\i}vel em:
+  \url{http://www.sciencedirect.com/science/article/pii/S1568494617306361}.}
+
+\bibitem[Escovedo et al. 2015]{Escovedo2015A2D2AP}
+\abntrefinfo{Escovedo et al.}{ESCOVEDO et al.}{2015}
+{ESCOVEDO, T. et al. A2d2: A pre-event abrupt drift detection.
+\emph{2015 International Joint Conference on Neural Networks (IJCNN)}, p.~1--8,
+  2015.}
+
 \bibitem[Hinkley 1970]{Hinkley}
 \abntrefinfo{Hinkley}{HINKLEY}{1970}
 {HINKLEY, D. Inference about the change-point in a sequence of random
   variables.
 v.~57, 04 1970.}
+
+\bibitem[Kuncheva e Faithfull 2014]{PCAFeatureExtractionChangeDetection}
+\abntrefinfo{Kuncheva e Faithfull}{KUNCHEVA; FAITHFULL}{2014}
+{KUNCHEVA, L.~I.; FAITHFULL, W.~J. Pca feature extraction for change detection
+  in multidimensional unlabeled data.
+\emph{IEEE Transactions on Neural Networks and Learning Systems}, v.~25, n.~1,
+  p. 69--80, Jan 2014.
+ISSN 2162-237X.}
 
 \bibitem[McGilchrist e Woodyer 1975]{McGilchrist_and_Woodyer}
 \abntrefinfo{McGilchrist e Woodyer}{MCGILCHRIST; WOODYER}{1975}
