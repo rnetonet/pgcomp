@@ -344,31 +344,211 @@ estimation = 0.0;
 - Funcionamento Java
 
 ```java
-m_n++;
+@Override
+public void resetLearning() {
+    m_n = 1;
+    m_numErrors = 0;
+    m_d = 0;
+    m_lastd = 0;
+    m_mean = 0.0;
+    m_stdTemp = 0.0;
+    m_m2smax = 0.0;
+    this.estimation = 0.0;
+}
 
-if (prediction == 1.0) {
-    m_numErrors += 1;
-    m_lastd = m_d;
-    m_d = m_n - 1;
-    int distance = m_d - m_lastd;
-    double oldmean = m_mean;
-    m_mean = m_mean + ((double) distance - m_mean) / m_numErrors;
-    this.estimation = m_mean;
-    m_stdTemp = m_stdTemp + (distance - m_mean) * (distance - oldmean);
-    double std = Math.sqrt(m_stdTemp / m_numErrors);
-    double m2s = m_mean + 2 * std;
+@Override
+public void input(double prediction) {
+    // prediction must be 1 or 0
+    // It monitors the error rate
+    // System.out.print(prediction + " " + m_n + " " + probability + " ");
+    if (this.isChangeDetected == true || this.isInitialized == false) {
+        resetLearning();
+        this.isInitialized = true;
+    }
+    
+    this.isChangeDetected = false;
+    
+    m_n++;
+    if (prediction == 1.0) {
+        this.isWarningZone = false;
+        this.delay = 0;
+        m_numErrors += 1;
+        m_lastd = m_d;
+        m_d = m_n - 1;
+        int distance = m_d - m_lastd;
+        double oldmean = m_mean;
+        m_mean = m_mean + ((double) distance - m_mean) / m_numErrors;
+        this.estimation = m_mean;
+        m_stdTemp = m_stdTemp + (distance - m_mean) * (distance - oldmean);
+        double std = Math.sqrt(m_stdTemp / m_numErrors);
+        double m2s = m_mean + 2 * std;
 
-    if (m2s > m_m2smax) {
-        if (m_n > FDDM_MINNUMINSTANCES) {
-            m_m2smax = m2s;
-        }
-    } else {
-        double p = m2s / m_m2smax;
-        if (m_n > FDDM_MINNUMINSTANCES && m_numErrors > m_minNumErrors && p < FDDM_OUTCONTROL) {
-            this.isChangeDetected = true;
+        // System.out.print(m_numErrors + " " + m_mean + " " + std + " " +
+        // m2s + " " + m_m2smax + " ");
+
+        if (m2s > m_m2smax) {
+            if (m_n > FDDM_MINNUMINSTANCES) {
+                m_m2smax = m2s;
+            }
+            //m_lastLevel = DDM_INCONTROL_LEVEL;
+            // System.out.print(1 + " ");
+        } else {
+            double p = m2s / m_m2smax;
+            // System.out.print(p + " ");
+            if (m_n > FDDM_MINNUMINSTANCES && m_numErrors > m_minNumErrors
+                    && p < FDDM_OUTCONTROL) {
+                //System.out.println(m_mean + ",D");
+                this.isChangeDetected = true;
+                //resetLearning();
+                //return DDM_OUTCONTROL_LEVEL;
+            } else if (m_n > FDDM_MINNUMINSTANCES
+                    && m_numErrors > m_minNumErrors && p < FDDM_WARNING) {
+                //System.out.println(m_mean + ",W");
+                //m_lastLevel = DDM_WARNING_LEVEL;
+                this.isWarningZone = true;
+                //return DDM_WARNING_LEVEL;
+            } else {
+                this.isWarningZone = false;
+                //System.out.println(m_mean + ",N");
+                //m_lastLevel = DDM_INCONTROL_LEVEL;
+                //return DDM_INCONTROL_LEVEL;
+            }
         }
     }
+}
 ```
 
 - Implementação Python
 
+[eddm.py](eddm.py)
+
+## EWMAChartDM
+
+```
+@article{Ross:2012:EWM:2076039.2076307,
+ author = {Ross, Gordon J. and Adams, Niall M. and Tasoulis, Dimitris K. and Hand, David J.},
+ title = {Exponentially Weighted Moving Average Charts for Detecting Concept Drift},
+ journal = {Pattern Recogn. Lett.},
+ issue_date = {January, 2012},
+ volume = {33},
+ number = {2},
+ month = jan,
+ year = {2012},
+ issn = {0167-8655},
+ pages = {191--198},
+ numpages = {8},
+ url = {http://dx.doi.org/10.1016/j.patrec.2011.08.019},
+ doi = {10.1016/j.patrec.2011.08.019},
+ acmid = {2076307},
+ publisher = {Elsevier Science Inc.},
+ address = {New York, NY, USA},
+ keywords = {Change detection, Concept drift, Streaming classification},
+}
+```
+
+- Observações:
+
+    - Detecta mesmo quando não há drift
+
+- Parâmetros:
+
+```java
+public IntOption minNumInstancesOption = new IntOption(
+        "minNumInstances",
+        'n',
+        "The minimum number of instances before permitting detecting change.",
+        30, 0, Integer.MAX_VALUE);
+
+public FloatOption lambdaOption = new FloatOption("lambda", 'l',
+        "Lambda parameter of the EWMA Chart Method", 0.2, 0.0, Float.MAX_VALUE);
+```
+
+- Atributos
+
+```java
+m_n = 1.0;
+m_sum = 0.0;
+m_p = 0.0;
+m_s = 0.0;
+z_t = 0.0;
+lambda = this.lambdaOption.getValue();
+```
+
+- Java
+
+```java
+m_sum += prediction;
+m_p = m_sum/m_n;
+m_s = Math.sqrt(  m_p * (1.0 - m_p)* lambda * (1.0 - Math.pow(1.0 - lambda, 2.0 * m_n)) / (2.0 - lambda));
+m_n++;
+z_t += lambda * (prediction - z_t);
+double L_t = 3.97 - 6.56 * m_p + 48.73 * Math.pow(m_p, 3) - 330.13 * Math.pow(m_p, 5) + 848.18 * Math.pow(m_p, 7); //%1 FP
+
+this.estimation = m_p;
+
+if (m_n > this.minNumInstancesOption.getValue() && m_n > this.minNumInstancesOption.getValue() && z_t > m_p + L_t * m_s) {
+    this.isChangeDetected = true;
+}
+```
+
+- Python
+
+[EWMAChartDM.py](EWMAChartDM.py)
+
+
+## GeometricMovingAverageDM
+
+```
+@article{Roberts:2000:CCT:338441.338464,
+ author = {Roberts, S. W.},
+ title = {Control Chart Tests Based on Geometric Moving Averages},
+ journal = {Technometrics},
+ issue_date = {Feb. 2000},
+ volume = {42},
+ number = {1},
+ month = feb,
+ year = {2000},
+ issn = {0040-1706},
+ pages = {97--101},
+ numpages = {5},
+ url = {http://dx.doi.org/10.2307/1271439},
+ doi = {10.2307/1271439},
+ acmid = {338464},
+ publisher = {American Society for Quality Control and American Statistical Association},
+ address = {Alexandria, Va, USA},
+}
+```
+
+- Observações:
+
+    - Não detecta quando não há drift
+
+- Python
+
+[GeometricMovingAverageDM.py](GeometricMovingAverageDM.py)
+
+## PageHinkleyDM
+
+```
+@article{BASSEVILLE1988309,
+title = "Detecting changes in signals and systems—A survey",
+journal = "Automatica",
+volume = "24",
+number = "3",
+pages = "309 - 326",
+year = "1988",
+issn = "0005-1098",
+doi = "https://doi.org/10.1016/0005-1098(88)90073-8",
+url = "http://www.sciencedirect.com/science/article/pii/0005109888900738",
+author = "Michèle Basseville",
+keywords = "Time-varying signals and systems, signals segmentation, failure detection, diagnosis"
+}
+```
+
+- Observações
+
+    - Não detecta quando não há drift
+
+- Python
+
+[PageHinkleyDM.py](PageHinkleyDM.py)

@@ -8,12 +8,12 @@ import moa.tasks.TaskMonitor;
 import java.util.*;
 
 /**
-    * Drift detection method based in Pettitt
-    *
-    *
-    * @author Ruivaldo Neto (rneto@rneto.net)
-    * @version $Revision: 7 $
-    */
+* Drift detection method based in Pettitt
+*
+*
+* @author Ruivaldo Neto (rneto@rneto.net)
+* @version $Revision: 1$
+*/
 public class Pettitt extends AbstractChangeDetector {
 
     private static final long serialVersionUID = 5210470661274384763L;
