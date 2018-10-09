@@ -125,6 +125,12 @@ Analisa números ordinais, que representam posições de um *rank*
 
 - O método de Pettitt não requer conhecimento sobre a distribuição inicial. Diferentemente dos outros métodos mencionados acima, que requerem
 
+## Implementações
+
+[Pettitt.java](Pettitt.java)
+
+[pettitt.r](pettitt.r)
+
 ## Observações sobre a implementação / MOA
 
 - Detecta mesmo quando não há drift
