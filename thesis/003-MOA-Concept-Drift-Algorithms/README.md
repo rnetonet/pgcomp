@@ -8,7 +8,12 @@
 // Reseta o detector
 public void resetLearning();
 
+//
 // Adiciona um valor numérico para o detector
+// IMPORTANTE:
+// 1.0 = detecção errada
+// 0.0 = detecção correta
+//
 public void input(double inputValue);
 
 // Houve mudança ? true ou false

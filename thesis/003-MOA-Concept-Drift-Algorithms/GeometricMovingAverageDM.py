@@ -23,6 +23,7 @@ x, y, drifts = [], [], []
 for posicao, valor in enumerate(stream):
     media = media + (valor - media) / n_instancias
     somatorio = _alpha * somatorio + (1.0 - _alpha) * (valor - media)
+    
     n_instancias +=1 
 
     x.append(posicao)

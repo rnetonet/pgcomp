@@ -5,7 +5,7 @@ from matplotlib import animation
 from stream import abrupt_stream as stream
 
 # Plot
-plt.ylim(-1.1, 1.1)
+plt.autoscale()
 
 # Parâmetros
 min_instancias = 30
@@ -17,6 +17,10 @@ n_valores = 1
 media = 0
 soma = 0
 
+_ninstancias = 0
+_soma = 0
+_media = 0
+
 x,y, drifts = [], [], []
 
 for posicao, valor in enumerate(stream):
@@ -25,13 +29,17 @@ for posicao, valor in enumerate(stream):
     n_valores += 1
 
     # plot
-    x.append(posicao)
-    y.append(media)
+    _ninstancias += 1
+    _soma += valor
+    _media = _soma / _ninstancias
+
+    if _ninstancias % 10 == 0:
+        x.append(posicao)
+        y.append(_media)
     
     if n_valores >= min_instancias and soma > limite:
         # drift
-        plt.axvline(x=posicao, color='k', linestyle='--', linewidth=0.5)
-        plt.draw()
+        drifts.append(posicao)
 
         # reset
         n_valores = 1
@@ -41,5 +49,6 @@ for posicao, valor in enumerate(stream):
 # plot
 plt.plot(x, y, 'r-', linewidth=0.5)
 for posicao in drifts:
+    print(posicao)
     plt.axvline(x=posicao, color='k', linestyle='-', linewidth=0.5)
 plt.show(block=True)
