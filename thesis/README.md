@@ -7,3 +7,5 @@
 - [DetectA: abrupt concept drift detection in non-stationary environments](002-DetectA-Abrupt-Concept-Drift-Detection/README.md)
 
 - [MOA - Concept Drift - Algorithms](003-MOA-Concept-Drift-Algorithms/README.md)
+
+- [A survey of methods for time series change point detection](004-A-survey-of-methods-for-time-series-change-point-detection/README.md)
