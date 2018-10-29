@@ -1,4 +1,4 @@
-## Artigos
+## Contents
 
 - [Pettitt - A Non-Parametric Approach to the Change-Point Problem](001-Article-Pettitt-Change-Point-MOA/README.md)
     - Implementação em [R](001-Article-Pettitt-Change-Point-MOA/pettitt.r)
@@ -12,3 +12,5 @@
 
 
 - [On learning guarantees to unsupervised concept drift detection on data streams](005-On-learning-guarantees-to-unsupervised-concept-drift-detection-on-data-streams/README.md)
+
+- [An Introduction to Statistics with Python](006-An-introduction-to-statistics-with-Python/README.md)
