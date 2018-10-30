@@ -2,18 +2,14 @@
 
 - Intro
     
-    - Utilizando o framework de Estabilidade de Algoritmo, para provar limites de aprendizagem nas técnicas não
-    supervisionadas aplicados a detecção de concept drift em streams de dados
+    - Utilizando o framework de Estabilidade de Algoritmo, para provar limites de aprendizagem nas técnicas não supervisionadas aplicados a detecção de concept drift em streams de dados
     
-    - Também implementa o algoritmo Plover, que permite a detecção de concept drift usando as funções de 
-    Momentos Estatísticos ou Power Spectrum. Permitindo adaptar a função de medida mais adequada à natureza 
-    dos dados.
+    - Também implementa o algoritmo Plover, que permite a detecção de concept drift usando as funções de Momentos Estatísticos ou Power Spectrum. Permitindo adaptar a função de medida mais adequada à natureza dos dados.
     
     - STL (Statistical Learning Theory) permite garantir e identificar o melhor algoritmo para aprendizagem supervisionada
     
     - Algoritmos não supervisionados não dispõem de tal arcabouço. Valendo-se de índices internos e externos.
     Contudo, os índices externos utilizam a correta definição dos clusters (labels), o que não é justo.
-    Logo, algoritmos não supervisionados, não têm esse aracabouço estatístico.
     
     - Apesar dessas limitações, algoritmos não supervisionados têm sido utilizados na detecção de concept drift em stream de dados.
     
@@ -156,7 +152,7 @@
     
 - Discussão
 
-    - **Oportunidade de pesquisa: adicionar as garantias de aprendizagem, como feito neste trabalho, aos algoritmos de rede neural, Self-Organizing Novelty Detection (SONDE) e Grow When Required (GWR). ** 
+    - **Oportunidade de pesquisa: adicionar as garantias de aprendizagem, como feito neste trabalho, aos algoritmos de detecção de concept drift baseados em rede neural, Self-Organizing Novelty Detection (SONDE) - Grow When Required (GWR). ** 
 
 - Sobre o arcabouço de garantia de aprendizagem:
 

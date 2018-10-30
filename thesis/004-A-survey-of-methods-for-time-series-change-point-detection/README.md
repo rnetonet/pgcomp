@@ -80,6 +80,7 @@ todas subsequências possíveis de tamanho k, movendo uma janela deslizante de t
 - Avaliação de performance
 
     - Se considerarmos apenas output, existem três tipos de algoritmos de detecção de change point:
+    
         1. Houve Change Point - Sim/Não (Classificador Binário)
         
         1. Níveis variados de precisão - CP ocorre dentro de de X unidades de tempo (Classificador multiclasse ou algoritmos não supervisionados)
@@ -359,7 +360,6 @@ todas subsequências possíveis de tamanho k, movendo uma janela deslizante de t
        - Desenvolver método para o cálculo automático de threshold para indicar CP
 
        - Lidar com séries não estacionárias (trends), concept drift. 
-       A mistura de métodos de CPD com Concept Drift é desafiador mas importante, pois muitos problemas do mundo real 
-       dependem disso.
+       A mistura de métodos de CPD com Concept Drift é desafiador mas importante, pois muitos problemas do mundo real dependem disso.
 
        
